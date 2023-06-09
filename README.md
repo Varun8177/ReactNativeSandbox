@@ -1,2 +1,14 @@
-# ReactNativeSandbox
-The primary goal of this repository is to learn and enhance my skills in React Native through hands-on project building.
+# Expo Router Example
+
+Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+
+## 🚀 How to use
+
+```sh
+npx create-expo-app -e with-router
+```
+
+## 📝 Notes
+
+- [Expo Router: Docs](https://expo.github.io/router)
+- [Expo Router: Repo](https://github.com/expo/router)
