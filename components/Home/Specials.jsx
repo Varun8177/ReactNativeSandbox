@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   Heading: {
     fontWeight: "500",
     color: "#000000",
-    fontSize: 40,
+    fontSize: 30,
     marginTop: 30,
   },
   Wrapper: {

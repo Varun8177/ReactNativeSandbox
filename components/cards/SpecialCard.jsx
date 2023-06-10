@@ -1,14 +1,19 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { images } from "../../constants";
+import { useRouter } from "expo-router";
 
 const SpecialCard = () => {
+  const router = useRouter();
   return (
-    <TouchableOpacity style={styles.Wrapper}>
+    <TouchableOpacity
+      style={styles.Wrapper}
+      onPress={() => router.push(`/product/1`)}
+    >
       <Image
         source={images.noodles}
         style={styles.ProductImage}
-        resizeMode="contain"
+        resizeMode="cover"
       />
       <Text style={styles.ProductTitle}>Noodles</Text>
       <Text style={styles.ProductSubText}>$7.2</Text>
