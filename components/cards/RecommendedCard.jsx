@@ -2,10 +2,14 @@ import React from "react";
 import { Image, StyleSheet, TouchableOpacity } from "react-native";
 import { images } from "../../constants";
 
-const RecommendedCard = () => {
+const RecommendedCard = ({ data }) => {
   return (
     <TouchableOpacity style={styles.wrapper}>
-      <Image source={images.cake} style={styles.productImage} />
+      <Image
+        source={{ uri: data }}
+        style={styles.productImage}
+        resizeMode="cover"
+      />
     </TouchableOpacity>
   );
 };

@@ -3,20 +3,20 @@ import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { images } from "../../constants";
 import { useRouter } from "expo-router";
 
-const SpecialCard = () => {
+const SpecialCard = ({ data }) => {
   const router = useRouter();
   return (
     <TouchableOpacity
       style={styles.Wrapper}
-      onPress={() => router.push(`/product/1`)}
+      onPress={() => router.push(`/product/${data.id}`)}
     >
       <Image
-        source={images.noodles}
+        source={{ uri: data.image }}
         style={styles.ProductImage}
         resizeMode="cover"
       />
-      <Text style={styles.ProductTitle}>Noodles</Text>
-      <Text style={styles.ProductSubText}>$7.2</Text>
+      <Text style={styles.ProductTitle}>{data.title}</Text>
+      <Text style={styles.ProductSubText}>{data.price}</Text>
       <Text style={styles.SeeAll}>See Details</Text>
       <Image source={images.arrow} resizeMode="contain" style={styles.arrow} />
     </TouchableOpacity>
