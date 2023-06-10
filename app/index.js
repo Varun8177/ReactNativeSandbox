@@ -4,14 +4,18 @@ import { images } from "../constants"
 import { useState } from "react";
 import { StyleSheet } from "react-native";
 import SearchBar from "../components/Home/searchBar";
+import Specials from "../components/Home/Specials";
+import Recommended from "../components/Home/Recommended";
+import Footer from "../components/Home/Footer";
 
 
 export default function Home() {
     const [refreshing, setRefreshing] = useState(false)
     const HandleRefresh = () => { }
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ backgroundColor: 'white', paddingLeft: 20, flex: 1 }}>
             <Stack.Screen options={{
+                headerShadowVisible: false,
                 title: "",
                 headerLeft: () => (
                     <TouchableOpacity>
@@ -22,7 +26,8 @@ export default function Home() {
                     <TouchableOpacity>
                         <Image source={images.cartIcon} />
                     </TouchableOpacity>
-                )
+                ),
+
             }} />
             <ScrollView
                 showsVerticalScrollIndicator={false}
@@ -30,10 +35,15 @@ export default function Home() {
                     <RefreshControl refreshing={refreshing} onRefresh={HandleRefresh} />
                 }
             >
-                <Text style={styles.Heading}>Hi James</Text>
-                <Text>What do you want to order today?</Text>
-                <SearchBar />
+                <View>
+                    <Text style={styles.Heading}>Hi Varun</Text>
+                    <Text >What do you want to order today?</Text>
+                    <SearchBar />
+                    <Specials />
+                    <Recommended />
+                </View>
             </ScrollView>
+            <Footer />
         </SafeAreaView>
     );
 }
@@ -42,6 +52,6 @@ const styles = StyleSheet.create({
     Heading: {
         fontWeight: "500",
         color: "#000000",
-        fontSize: 40
-    },
+        fontSize: 40,
+    }
 });
